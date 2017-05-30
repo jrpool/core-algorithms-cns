@@ -21,7 +21,7 @@
     "chai": ">=4.0.0",
     "chai-change": ">=2.1.2",
     "eslint": ">=3.19.0",
-    "mocha": ">=3.4.2",
+    "mocha": ">=3.4.2"
   },
   "author": "Jonathan Pool",
   "license": "MIT",
