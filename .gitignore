@@ -1,3 +1,4 @@
 /node_modules
-.DS_Store
 /private
+.eslintignore
+.DS_Store
