@@ -4,7 +4,7 @@ import _makeChange from '../src/makeChange';
 describe('_makeChange', function() {
 
   it('is a function', function() {
-    expect(_makeChange).to.be.a('function')
+    expect(_makeChange).to.be.a('function');
   });
 
   context('valid arguments', function() {
@@ -54,7 +54,7 @@ describe('_makeChange', function() {
       }
     );
 
-  })
+  });
 
   context('invalid arguments', function() {
 
@@ -120,6 +120,6 @@ describe('_makeChange', function() {
         .to.be.undefined;
     });
 
-  })
+  });
 
-})
+});

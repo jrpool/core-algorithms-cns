@@ -35,7 +35,7 @@ export default function makeChange(amounts) {
       ['pennies', 1]
     ];
     // Initialize the amount to be returned that has not yet been allocated.
-    let moreChange = amounts.amountGiven - amounts.price;
+    let remainingChange = amounts.amountGiven - amounts.price;
     // Initialize an object containing the components of the change.
     let changeCoins = {
       'dollars': 0,
@@ -48,20 +48,20 @@ export default function makeChange(amounts) {
     // For each denomination, in descending order of size:
     for (let i = 0; i < coinTypes.length; i++) {
       // If there is no more change to return:
-      if (moreChange === 0) {
+      if (remainingChange === 0) {
         // Stop calculating.
         break;
       }
       // Identify its value.
       const thisValue = coinTypes[i][1];
       // Identify the count of coins of the denomination to return.
-      const thisCount = Math.floor(moreChange / thisValue);
+      const thisCount = Math.floor(remainingChange / thisValue);
       // Identify the amount those coins constitute.
       const thisAmount = thisCount * thisValue;
       // Amend the object to specify the count of those coins.
       changeCoins[coinTypes[i][0]] = thisCount;
       // Amend the remaining amount to be returned.
-      moreChange -= thisAmount;
+      remainingChange -= thisAmount;
     }
     // Return the object.
     return changeCoins;
@@ -69,6 +69,6 @@ export default function makeChange(amounts) {
   // Otherwise, i.e. if the argument is invalid:
   else {
     // Return undefined.
-    return undefined
+    return undefined;
   }
 }
