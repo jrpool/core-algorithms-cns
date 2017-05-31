@@ -10,7 +10,7 @@ describe('_makeChange', function() {
   context('valid arguments', function() {
 
     it(
-      'returns {dollars: 0, half-dollars: 0, quarters: 0, dimes: 0, nickels: 0, pennies: 0} when price is 333 and amountGiven is 333', function() {
+      'returns correct result when price is 333 and amountGiven is 333', function() {
         expect(_makeChange({price: 333, amountGiven: 333})).to.eql(
           {
             'dollars': 0,
@@ -25,7 +25,7 @@ describe('_makeChange', function() {
     );
 
     it(
-      'returns {dollars: 3, half-dollars: 1, quarters: 1, dimes: 2, nickels: 0, pennies: 3} when price is 102 and amountGiven is 500', function() {
+      'returns correct result when price is 102 and amountGiven is 500', function() {
         expect(_makeChange({price: 102, amountGiven: 500})).to.eql(
           {
             'dollars': 3,
@@ -40,7 +40,7 @@ describe('_makeChange', function() {
     );
 
     it(
-      'returns {dollars: 0, half-dollars: 0, quarters: 0, dimes: 0, nickels: 0, pennies: 1} when price is 9999 and amountGiven is 10000', function() {
+      'returns correct result when price is 9999 and amountGiven is 10000', function() {
         expect(_makeChange({price: 9999, amountGiven: 10000})).to.eql(
           {
             'dollars': 0,
