@@ -6,19 +6,14 @@
     1. Argument 0 is a positive finite integer.
 */
 export default function factorial(number) {
-  // If the arguments are invalid:
+  // If the arguments are valid:
   if (
-    arguments.length !== 1
-    || typeof number !== 'number'
-    || number <= 0
-    || number === Infinity
-    || Math.ceil(number) !== Math.floor(number)
+    arguments.length === 1
+    && typeof number === 'number'
+    && number > 0
+    && number !== Infinity
+    && Math.ceil(number) === Math.floor(number)
   ) {
-    // Return a failure result.
-    return undefined;
-  }
-  // Otherwise:
-  else {
     // Return the factorial of the number.
     return Array(number - 1).fill(0).reduce(
       (accumulator, currentValue, currentIndex) => {

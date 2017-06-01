@@ -6,19 +6,14 @@
     1. Argument 0 is a positive finite integer.
 */
 export default function collatzConjecture(number) {
-  // If the arguments are invalid:
+  // If the arguments are valid:
   if (
-    arguments.length !== 1
-    || typeof number !== 'number'
-    || number <= 0
-    || number === Infinity
-    || Math.ceil(number) !== Math.floor(number)
+    arguments.length === 1
+    && typeof number === 'number'
+    && number > 0
+    && number !== Infinity
+    && Math.ceil(number) === Math.floor(number)
   ) {
-    // Return a failure result.
-    return undefined;
-  }
-  // Otherwise:
-  else {
     // Initialize a result array.
     let result = [number];
     // Initialize its last element.
