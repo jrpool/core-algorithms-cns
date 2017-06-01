@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import setIntersection from '../src/setIntersection';
+import setIntersection from '../../src/Set/setIntersection';
 
 describe('setIntersection', function() {
 

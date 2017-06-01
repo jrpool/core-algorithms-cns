@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import _isPalindrome from '../src/isPalindrome';
+import _isPalindrome from '../../src/Classic/isPalindrome';
 
 describe('_isPalindrome', function() {
 

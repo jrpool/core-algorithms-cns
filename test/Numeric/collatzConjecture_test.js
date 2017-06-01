@@ -1,24 +1,24 @@
 import { expect } from 'chai';
-import factorial from '../src/factorial';
+import collatzConjecture from '../../src/Numeric/collatzConjecture';
 
-describe('factorial', function() {
+describe('collatzConjecture', function() {
 
   it('is a function', function() {
-    expect(factorial).to.be.a('function');
+    expect(collatzConjecture).to.be.a('function');
   });
 
   context('valid arguments', function() {
 
     it('correct when given a small positive integer', function() {
-      expect(factorial(7)).to.equal(5040);
+      expect(collatzConjecture(7)).to.eql(
+        [7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+      );
     });
 
     it('correct when given a larger positive integer', function() {
-      expect(factorial(15)).to.equal(1307674368000);
-    });
-
-    it('correct when given 1', function() {
-      expect(factorial(1)).to.equal(1);
+      expect(collatzConjecture(15)).to.eql(
+        [15, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+      );
     });
 
   });
@@ -26,31 +26,31 @@ describe('factorial', function() {
   context('invalid arguments', function() {
 
     it('undefined when the argument is not a number', function() {
-      expect(factorial('5')).to.be.undefined;
+      expect(collatzConjecture('5')).to.be.undefined;
     });
 
     it('undefined when the argument is not an integer', function() {
-      expect(factorial(5.34)).to.be.undefined;
+      expect(collatzConjecture(5.34)).to.be.undefined;
     });
 
     it('undefined when the argument is 0', function() {
-      expect(factorial(0)).to.be.undefined;
+      expect(collatzConjecture(0)).to.be.undefined;
     });
 
     it('undefined when the argument is negative', function() {
-      expect(factorial(-4)).to.be.undefined;
+      expect(collatzConjecture(-4)).to.be.undefined;
     });
 
     it('undefined when the argument is infinity', function() {
-      expect(factorial(Infinity)).to.be.undefined;
+      expect(collatzConjecture(Infinity)).to.be.undefined;
     });
 
     it('undefined when there is no argument', function() {
-      expect(factorial()).to.be.undefined;
+      expect(collatzConjecture()).to.be.undefined;
     });
 
     it('returns undefined when there are multiple arguments', function() {
-      expect(factorial(13, 2)).to.be.undefined;
+      expect(collatzConjecture(13, 2)).to.be.undefined;
     });
 
   });

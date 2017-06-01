@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import setSymmetricDifference from '../src/setSymmetricDifference';
+import setSymmetricDifference from '../../src/Set/setSymmetricDifference';
 
 describe('setSymmetricDifference', function() {
 

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import makeChange from '../src/makeChange';
+import makeChange from '../../src/Classic/makeChange';
 
 describe('makeChange', function() {
 

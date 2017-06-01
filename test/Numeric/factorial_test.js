@@ -1,22 +1,24 @@
 import { expect } from 'chai';
-import fibonacci from '../src/fibonacci';
+import factorial from '../../src/Numeric/factorial';
 
-describe('fibonacci', function() {
+describe('factorial', function() {
 
   it('is a function', function() {
-    expect(fibonacci).to.be.a('function');
+    expect(factorial).to.be.a('function');
   });
 
   context('valid arguments', function() {
 
     it('correct when given a small positive integer', function() {
-      expect(fibonacci(7)).to.eql([0, 1, 1, 2, 3, 5, 8]);
+      expect(factorial(7)).to.equal(5040);
     });
 
     it('correct when given a larger positive integer', function() {
-      expect(fibonacci(15)).to.eql(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
-      );
+      expect(factorial(15)).to.equal(1307674368000);
+    });
+
+    it('correct when given 1', function() {
+      expect(factorial(1)).to.equal(1);
     });
 
   });
@@ -24,31 +26,31 @@ describe('fibonacci', function() {
   context('invalid arguments', function() {
 
     it('undefined when the argument is not a number', function() {
-      expect(fibonacci('5')).to.be.undefined;
+      expect(factorial('5')).to.be.undefined;
     });
 
     it('undefined when the argument is not an integer', function() {
-      expect(fibonacci(5.34)).to.be.undefined;
+      expect(factorial(5.34)).to.be.undefined;
     });
 
     it('undefined when the argument is 0', function() {
-      expect(fibonacci(0)).to.be.undefined;
+      expect(factorial(0)).to.be.undefined;
     });
 
     it('undefined when the argument is negative', function() {
-      expect(fibonacci(-4)).to.be.undefined;
+      expect(factorial(-4)).to.be.undefined;
     });
 
     it('undefined when the argument is infinity', function() {
-      expect(fibonacci(Infinity)).to.be.undefined;
+      expect(factorial(Infinity)).to.be.undefined;
     });
 
     it('undefined when there is no argument', function() {
-      expect(fibonacci()).to.be.undefined;
+      expect(factorial()).to.be.undefined;
     });
 
     it('returns undefined when there are multiple arguments', function() {
-      expect(fibonacci(13, 2)).to.be.undefined;
+      expect(factorial(13, 2)).to.be.undefined;
     });
 
   });

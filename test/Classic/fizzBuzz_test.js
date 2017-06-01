@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import fizzBuzz from '../src/fizzBuzz';
+import fizzBuzz from '../../src/Classic/fizzBuzz';
 
 describe('fizzBuzz', function() {
 
