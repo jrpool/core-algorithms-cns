@@ -3,7 +3,7 @@ import isNaturalNumber from './isNaturalNumber';
 /*
   Function declaration for factorial and export statement making that
   function the default export from this module.
-  Preconditions:
+  Enforced argument requirements:
     0. The argument count is 1.
     1. Argument 0 is a positive finite integer.
 */

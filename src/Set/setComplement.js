@@ -1,7 +1,7 @@
 /*
   Function declaration for setComplement and export statement making that
   function the default export from this module.
-  Preconditions:
+  Enforced argument requirements:
     0. The argument count is 2.
     1. Both arguments are arrays.
 */
