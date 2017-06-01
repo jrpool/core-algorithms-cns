@@ -1,23 +1,20 @@
+import isNaturalNumber from './isNaturalNumber';
+
 /*
   Function declaration for fibonacci and export statement making that
   function the default export from this module.
-  Preconditions:
+  Enforced argument requirements:
     0. The argument count is 1.
     1. Argument 0 is a positive finite integer.
 */
-export default function fibonacci(number) {
+export default function fibonacci(...args) {
   // If the arguments are valid:
-  if (
-    arguments.length === 1
-    && typeof number === 'number'
-    && number > 0
-    && number !== Infinity
-    && Math.ceil(number) === Math.floor(number)
-  ) {
+  if (isNaturalNumber(args)) {
     // Identify a minimal Fibonacci array.
     let result = [0, 1];
+    let number;
     // If the number is 1 or 2:
-    if (number < 3) {
+    if ((number = args[0]) < 3) {
       // Return the Fibonacci array with the specified length.
       return result.slice(0, number);
     }

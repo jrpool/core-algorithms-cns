@@ -1,30 +1,35 @@
+// Function to validate the arguments.
+const isValid = (args) => {
+  let arg;
+  return args.length === 1
+    && (arg = args[0]) !== undefined
+    && arg !== null
+    && typeof arg === 'object'
+    && arg.hasOwnProperty('price')
+    && arg.hasOwnProperty('amountGiven')
+    && Object.keys(arg).length === 2
+    && typeof arg.price === 'number'
+    && typeof arg.amountGiven === 'number'
+    && arg.price >= 0
+    && arg.amountGiven >= arg.price
+    && arg.amountGiven !== Infinity
+    && Math.ceil(arg.price) === Math.floor(arg.price)
+    && Math.ceil(arg.amountGiven) === Math.floor(arg.amountGiven);
+};
+
 /*
-  Function declaration for makeChange and export statement making that
-  function the default export from this module.
-  Preconditions:
+  Function and default export declaration for makeChange.
+  Enforced argument requirements:
     0. The argument count is 1.
     1. Argument 0 is an object with properties price and amountGiven.
     2. The value of price is a nonnegative integer.
     3. The value of amountGiven is an integer no smaller than price.
 */
-export default function makeChange(amounts) {
+export default function makeChange (...args) {
   // If the arguments are valid:
-  if (
-    arguments.length === 1
-    && amounts !== undefined
-    && amounts !== null
-    && typeof amounts === 'object'
-    && amounts.hasOwnProperty('price')
-    && amounts.hasOwnProperty('amountGiven')
-    && Object.keys(amounts).length === 2
-    && typeof amounts.price === 'number'
-    && typeof amounts.amountGiven === 'number'
-    && amounts.price >= 0
-    && amounts.amountGiven >= amounts.price
-    && amounts.amountGiven !== Infinity
-    && Math.ceil(amounts.price) === Math.floor(amounts.price)
-    && Math.ceil(amounts.amountGiven) === Math.floor(amounts.amountGiven)
-  ) {
+  if (isValid(args)) {
+    // Identify the true argument.
+    const amounts = args[0];
     // Identify an array of names and values of denominations.
     const coinTypes = [
       ['dollars', 100],
