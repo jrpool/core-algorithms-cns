@@ -5,13 +5,8 @@
     0. The argument count is 0.
 */
 export default function fizzBuzz() {
-  // If the arguments are invalid:
-  if (arguments.length !== 0) {
-    // Return undefined.
-    return undefined;
-  }
-  // Otherwise:
-  else {
+  // If the arguments are valid:
+  if (arguments.length === 0) {
     // Define a function to change a number to a string as required.
     const changer = (currentValue, index) => {
       const quantity = index + 1;

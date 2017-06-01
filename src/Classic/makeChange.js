@@ -66,9 +66,4 @@ export default function makeChange(amounts) {
     // Return the object.
     return changeCoins;
   }
-  // Otherwise, i.e. if the arguments are invalid:
-  else {
-    // Return undefined.
-    return undefined;
-  }
 }

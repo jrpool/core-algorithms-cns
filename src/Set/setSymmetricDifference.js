@@ -6,17 +6,8 @@
     1. Both arguments are arrays.
 */
 export default function setSymmetricDifference(a, b) {
-  // If the arguments are invalid:
-  if (
-    arguments.length !== 2
-    || ! Array.isArray(a)
-    || ! Array.isArray(b)
-  ) {
-    // Return a failure result.
-    return undefined;
-  }
-  // Otherwise:
-  else {
+  // If the arguments are valid:
+  if (arguments.length === 2 && Array.isArray(a) && Array.isArray(b)) {
     // Initialize the result.
     let result = [];
     // For each permutation of the arrays:

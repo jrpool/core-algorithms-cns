@@ -6,19 +6,14 @@
     1. Argument 0 is a positive finite integer.
 */
 export default function fibonacci(number) {
-  // If the arguments are invalid:
+  // If the arguments are valid:
   if (
-    arguments.length !== 1
-    || typeof number !== 'number'
-    || number <= 0
-    || number === Infinity
-    || Math.ceil(number) !== Math.floor(number)
+    arguments.length === 1
+    && typeof number === 'number'
+    && number > 0
+    && number !== Infinity
+    && Math.ceil(number) === Math.floor(number)
   ) {
-    // Return a failure result.
-    return undefined;
-  }
-  // Otherwise:
-  else {
     // Identify a minimal Fibonacci array.
     let result = [0, 1];
     // If the number is 1 or 2:
