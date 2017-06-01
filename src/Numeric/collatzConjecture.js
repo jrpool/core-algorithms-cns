@@ -1,19 +1,16 @@
+import isNaturalNumber from './isNaturalNumber';
+
 /*
-  Function declaration for collatzConjecture and export statement making that
-  function the default export from this module.
-  Preconditions:
+  Function and default export declaration for collatzConjecture.
+  Enforced argument requirements:
     0. The argument count is 1.
     1. Argument 0 is a positive finite integer.
 */
-export default function collatzConjecture(number) {
+export default function collatzConjecture (...args) {
   // If the arguments are valid:
-  if (
-    arguments.length === 1
-    && typeof number === 'number'
-    && number > 0
-    && number !== Infinity
-    && Math.ceil(number) === Math.floor(number)
-  ) {
+  if (isNaturalNumber(args)) {
+    // Identify the true argument.
+    const number = args[0];
     // Initialize a result array.
     let result = [number];
     // Initialize its last element.
