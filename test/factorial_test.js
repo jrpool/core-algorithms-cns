@@ -17,6 +17,10 @@ describe('factorial', function() {
       expect(factorial(15)).to.equal(1307674368000);
     });
 
+    it('correct when given 1', function() {
+      expect(factorial(1)).to.equal(1);
+    });
+
   });
 
   context('invalid arguments', function() {
