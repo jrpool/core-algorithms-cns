@@ -34,6 +34,7 @@
   "homepage": "https://github.com/jrpool/core-algorithms-cns#readme",
   "eslintConfig": {
     "env": {
+      "node": true,
       "browser": true,
       "es6": true,
       "mocha": true
