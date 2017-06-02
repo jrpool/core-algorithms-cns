@@ -74,6 +74,9 @@ isPalindrome
     ✓ true when given a palindrome containing digits
     ✓ true when given a palindrome containing digits
     ✓ false when given a nonpalindrome
+    ✓ true when given a multiscript palindrome
+    ✓ true when given a cased multiscript palindrome
+    ✓ false when given a cased multiscript nonpalindrome
     ✓ true when given a huge palindrome
   invalid arguments
     ✓ undefined when given no argument
