@@ -16,6 +16,15 @@ export default function isPalindrome(string) {
     const half0 = prunedString.slice(0, Math.floor(prunedLength / 2));
     const half1 = prunedString.slice(Math.ceil(prunedLength / 2));
     // Return whether the pruned string is a palindrome.
-    return half0 === half1.split('').reverse().join('');
+    const halfLength = half0.length;
+    for (let i = 0; i < halfLength; i++) {
+      if (half1[i] !== half0[halfLength - 1 - i]) {
+        return false;
+      }
+    }
+    return true;
+    // ALTERNATE VERSION
+    // More compact, but about twice as expensive.
+    // return half0 === half1.split('').reverse().join('');
   }
 }

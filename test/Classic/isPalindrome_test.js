@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import _isPalindrome from '../../src/Classic/isPalindrome';
 
-describe('_isPalindrome', function() {
+describe('isPalindrome', function() {
 
   it('is a function', function() {
     expect(_isPalindrome).to.be.a('function');
@@ -72,6 +72,18 @@ describe('_isPalindrome', function() {
     it(
       'false when given a nonpalindrome', function() {
         expect(_isPalindrome('airbnbra')).to.be.false;
+      }
+    );
+
+    it(
+      'true when given a huge palindrome', function() {
+        const fragment = 'oaeauhaocugauheouhtz';
+        const repetition = 10000;
+        const hugeHalf0 = fragment.repeat(repetition);
+        const hugeHalf1 = fragment.split('').reverse().join('')
+          .repeat(repetition);
+        const hugeString = hugeHalf0 + hugeHalf1;
+        expect(_isPalindrome(hugeString)).to.be.true;
       }
     );
 
