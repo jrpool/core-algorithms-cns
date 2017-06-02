@@ -40,11 +40,48 @@ directories by executing:
 ## Algorithms:
 
 ```
+=== Classic
+fizzBuzz.js
+isPalindrome.js
+makeChange.js
+=== Numeric
+collatzConjecture.js
+factorial.js
+fibonacci.js
+=== Set
+setComplement.js
+setIntersection.js
+setSymmetricDifference.js
+setUnion.js
 ```
 
 ## Usage and Examples
 
-_...and this_
+Example of portion of output from `npm test`:
+
+```
+isPalindrome
+  ✓ is a function
+  valid arguments
+    ✓ true when given an empty string
+    ✓ true when given a length-1 palindrome
+    ✓ true when given a simple even-length palindrome
+    ✓ true when given a simple odd-length palindrome
+    ✓ true when given a cased even-length palindrome
+    ✓ true when given a cased odd-length palindrome
+    ✓ true when given a punctuated palindrome
+    ✓ true when given a spaced palindrome
+    ✓ true when given a palindrome containing digits
+    ✓ true when given a palindrome containing digits
+    ✓ false when given a nonpalindrome
+    ✓ true when given a huge palindrome
+  invalid arguments
+    ✓ undefined when given no argument
+    ✓ undefined when given multiple arguments
+    ✓ undefined when given a number
+    ✓ undefined when given an array
+    ✓ undefined when given an object
+```
 
 ## Resources
 
