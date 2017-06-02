@@ -1,3 +1,5 @@
+import XRegExp from 'xregexp';
+
 /*
   Function declaration for isPalindrome and export statement making that
   function the default export from this module.
@@ -8,8 +10,6 @@
 export default function isPalindrome(string) {
   // If the arguments are valid:
   if (arguments.length === 1 && typeof string === 'string') {
-    // Make XRegExp available.
-    const XRegExp = require('xregexp');
     // Identify a pattern matching all characters except letters and numbers.
     const discardables = XRegExp('[^\\pL\\pN]', 'g');
     // Identify the string without disregarded characters and lower-cased.
