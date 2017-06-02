@@ -71,7 +71,25 @@ describe('isPalindrome', function() {
 
     it(
       'false when given a nonpalindrome', function() {
-        expect(_isPalindrome('airbnbra')).to.be.false;
+        expect(_isPalindrome('airb23nbria')).to.be.false;
+      }
+    );
+
+    it(
+      'true when given a multiscript palindrome', function() {
+        expect(_isPalindrome('aщir-bমnbnমb-riщa')).to.be.true;
+      }
+    );
+
+    it(
+      'true when given a cased multiscript palindrome', function() {
+        expect(_isPalindrome('aЩiR-bমnbnমb-r⁋iщa')).to.be.true;
+      }
+    );
+
+    it(
+      'false when given a cased multiscript nonpalindrome', function() {
+        expect(_isPalindrome('aЩir-bমnbnমb-r๕iщa')).to.be.false;
       }
     );
 

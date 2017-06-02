@@ -8,8 +8,13 @@
 export default function isPalindrome(string) {
   // If the arguments are valid:
   if (arguments.length === 1 && typeof string === 'string') {
+    // Make XRegExp available.
+    const XRegExp = require('xregexp');
+    // Identify a pattern matching all characters except letters and numbers.
+    const discardables = XRegExp('[^\\pL\\pN]', 'g');
     // Identify the string without disregarded characters and lower-cased.
-    const prunedString = string.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    const prunedString
+      = XRegExp.replace(string, discardables, '').toLowerCase();
     // Identify its length.
     const prunedLength = prunedString.length;
     // Identify its halves, without any middle character.
